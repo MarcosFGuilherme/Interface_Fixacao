@@ -30,10 +30,10 @@ public class Program {
 		System.out.print("Enter number of installments: ");
 		int months = sc.nextInt();
 		
-		ContractService cs = new ContractService();
-		cs.processContract(contract, months, new PaypalService());
+		ContractService cs = new ContractService(new PaypalService());
+		cs.processContract(contract, months);
 		
-		System.out.println("Data Contract: ");
+		System.out.println();
 		System.out.println(contract);
 		
 		sc.close();
